@@ -1,0 +1,88 @@
+.like{
+    min-height: 500px;
+}
+
+.like__text{
+    padding: 30px 0;
+}
+.favourites{
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgb(155, 155, 155);
+    border-radius: 20px;
+}
+.like__product{
+    width: 100%;
+    height: 200px;
+    
+    border-radius: 14px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.like__product img{
+    width: 180px;
+    height: 100%;
+    
+    border-radius: 10px;
+}
+.like__name{
+    width: 40%;
+    height: 100%;
+    
+    padding: 15px 40px;
+}
+.like__brand{
+    padding: 5px;
+    color: #fff;
+    width: 130px;
+    background: #da002b;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+.like__cost{
+    width: 15%;
+    height: 100%;
+    
+    text-align: center;
+    padding: 15px 0px;
+}
+.like__cost del{
+    color: #da002b;
+}
+.like__cost h4{
+    margin: 12px 0;
+}
+.like__download{
+    width: 20%;
+    height: 100%;
+    
+    padding: 15px 0;
+}
+.like__download button{
+    width: 100%;
+    height: 35px;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    
+    
+}
+.like_btn1{
+    background-color: #da002b;
+    color: #fff;
+    border: 2px solid #da002b;
+}
+.like_btn1:hover{
+    background-color: #c00026;
+    transition: .3s;
+}
+.like_btn2{
+    background-color: #fff;
+    border: 2px solid #da002b;
+    color: #da002b;
+}
+.like_btn2:hover{
+    background-color: #ffe1e7;
+    transition: .3s;
+}

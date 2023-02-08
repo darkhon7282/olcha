@@ -24,7 +24,7 @@
     flex-direction: column;
 }
 .product__data a img{
-    width: 200px;
+    width: 100%;
     display: block;
     margin: auto;
 }
@@ -71,4 +71,31 @@
 .product__data button:hover{
     background-color: #ffe1e7;
     transition: .3s;
+}
+
+
+@media screen and (max-width: 550px) {
+    .product__about{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    }
+    .pro__items{
+    display: flex;
+    height: auto;
+    
+}
+.product__data{
+    width: auto;
+    height: auto;
+    margin: 0;
+    grid-gap: 5px;
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+}
+.product__name{
+    /* align-items: flex-start; */
+    height: auto;
+}
 }

@@ -86,7 +86,7 @@ function Products() {
 
 
   return (
-    <div className='product'>
+    <div className='product container'>
       <div className="product__about">
         
         {

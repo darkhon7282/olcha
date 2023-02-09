@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-around;
 }
-.like__product img{
+.like__product a img{
     width: 180px;
     height: 100%;
     
@@ -85,4 +85,206 @@
 .like_btn2:hover{
     background-color: #ffe1e7;
     transition: .3s;
+}
+
+@media screen and (max-width: 670px) {
+    .like__full{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .favourites{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+    }
+    .like__product{
+        width: 100%;
+        height: auto;
+        
+        border-radius: 14px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .like__product a img{
+        width: 100px;
+        height: auto;
+        
+        border-radius: 10px;
+    }
+    
+    .like__name{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .like__brand{
+        padding: 5px;
+        color: #fff;
+        width: 130px;
+        background: #da002b;
+        border-radius: 10px;
+        margin: 10px 0 0 0;
+        text-align: center;
+    }
+    .like__cost{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        padding: 5px 0px;
+        font-size: 12px;
+    }
+    .like__download{
+        width: 90%;
+        height: 100%;
+        display: block;
+        padding: 10px 0;
+        gap: 10px;
+    }
+    .like__download button{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .like__full{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .favourites{
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+    }
+    .like__product{
+        width: 100%;
+        height: auto;
+        
+        border-radius: 14px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .like__product a img{
+        width: 180px;
+        height: auto;
+        
+        border-radius: 10px;
+    }
+    
+    .like__name{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .like__brand{
+        padding: 5px;
+        color: #fff;
+        width: 130px;
+        background: #da002b;
+        border-radius: 10px;
+        margin: 10px 0 0 0;
+        text-align: center;
+    }
+    .like__cost{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        padding: 5px 0px;
+        font-size: 14px;
+    }
+    .like__download{
+        width: 90%;
+        height: 100%;
+        display: block;
+        padding: 10px 0;
+        gap: 10px;
+    }
+    .like__download button{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .like__full{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .favourites{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .like__product{
+        width: 100%;
+        height: auto;
+        
+        border-radius: 14px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .like__product a img{
+        width: 250px;
+        height: auto;
+        
+        border-radius: 10px;
+    }
+    
+    .like__name{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 10px;
+        font-size: 18px;
+    }
+    .like__brand{
+        padding: 5px;
+        color: #fff;
+        width: 130px;
+        background: #da002b;
+        border-radius: 10px;
+        margin: 10px 0 0 0;
+        text-align: center;
+    }
+    .like__cost{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        padding: 5px 0px;
+        font-size: 18px;
+    }
+    .like__download{
+        width: 90%;
+        height: 100%;
+        display: block;
+        padding: 10px 0;
+        gap: 10px;
+    }
+    .like__download button{
+        font-size: 17px;
+    }
 }

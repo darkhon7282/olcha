@@ -46,6 +46,7 @@
 }
 .nav__search{
     flex: 1;
+    width: 400px;
     height: 36px;
     border-radius: 6px;
     display: flex;
@@ -95,11 +96,7 @@
 
 
 
-@media screen and (max-width: 1300px) {
-    .nav__search input{
-        width: 80%;
-    }
-}
+
 .nav__items{
     display: flex;
     gap: 30px;

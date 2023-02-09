@@ -4,6 +4,7 @@ import "./Like.css"
 import empty from "../../assets/empty.png"
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Like() {
   const like = useSelector(s => s.heart)
@@ -16,13 +17,15 @@ function Like() {
         :
         <div className="">
           <div className="like__text">
-                  <h1>Sevimlilar</h1>
-                </div>
-            {
+            <h1>Sevimlilar</h1>
+          </div>
+          <div className="like__full">
+          {
               like?.map((item, inx)=> <div key={inx} className="favourites">
                 
                   <div className="like__product">
-                    <img src={item.urls[0]} alt="" />
+                  <Link to={`/information/${item.id}`}><img src={item.urls[0]} alt="" /></Link>
+                    
                     <div className="like__name">
                       <h3>{item?.title}</h3>
                       <div className="like__brand">
@@ -40,6 +43,8 @@ function Like() {
                   </div>
                 </div>)
             }
+          </div>
+            
         </div>
         
         

@@ -1,7 +1,9 @@
 import {AiFillStar} from "react-icons/ai"
+import anorbank from "../assets/Anorbank.png"
 export const PRODUCTS = [
     
     {
+        bank: anorbank,
         id: "pro-1",
         title: "Apple iPhone 14 Pro Max",
         del: 0,
@@ -447,7 +449,7 @@ export const PRODUCTS = [
     {
         id: "pro-9",
         del: 550_000,
-        title: "Nokia 110 Dual Sim, Black",
+        title: "Nokia 110 Dual Sim, Black, WhiteGray",
         price: 420_000,
         singicon : <AiFillStar/>,
         singicon : <AiFillStar/>,
@@ -560,5 +562,7 @@ export const PRODUCTS = [
             "https://olcha.uz/image/700x700/products/2022-06-05/samsung-galaxy-a13-chernyy-4128-gb-56395-1.jpeg",
         ]
     },
+    
+    
 
 ]

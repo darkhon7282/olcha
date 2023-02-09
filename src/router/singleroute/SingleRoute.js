@@ -6,6 +6,7 @@ import {BiCheckShield} from "react-icons/bi"
 import {HiOutlineExclamationCircle} from "react-icons/hi"
 import {TbTruckDelivery} from "react-icons/tb"
 import {SlBasket} from "react-icons/sl"
+
 function SingleRoute() {
     const params = useParams()
     const oneItem = PRODUCTS?.find(el => el.id === params.id)
@@ -14,7 +15,7 @@ function SingleRoute() {
     if(!oneItem){
         return <div> <h2>Ma'lumot topilmadi</h2> </div>        
     }
-
+    
   return (
     <div className='container'>
         
@@ -43,7 +44,17 @@ function SingleRoute() {
                     <button className='product_add_bascet'><SlBasket className='product__bascet'/> Savatchaga qo'shish</button>
                     <button className='product_buy'>Bir bosishda sotib olish</button>
                 </div>
+                <div className="product__add ">
+                    <p className='delivery_info'>Bo'lib to'lash</p>
+                    <h2>{oneItem?.price} so'm / 12 oy</h2>
+                    <span className='bank_icon'>gabriel</span>
+                    <span className='bank_icon'>BANK</span>
+                    <hr />
+                    <button className='product_add_bascet basket__red'>Bo'lib to'lash</button>
+                    
+                </div>
             </div>
+           
         </div>
    
     </div>

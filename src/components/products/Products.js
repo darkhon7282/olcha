@@ -3,8 +3,8 @@ import {PRODUCTS} from "../../static"
 import { Link } from 'react-router-dom'
 import "./Products.css"
 import {FiShoppingCart, FiBarChart2} from "react-icons/fi"
-import {AiOutlineHeart} from "react-icons/ai"
-import { useDispatch } from 'react-redux'
+import {AiOutlineHeart, AiFillHeart} from "react-icons/ai"
+import { useDispatch, useSelector } from 'react-redux'
 import { ADD_TO_LIKE } from '../../context/action/actionType'
 
 // import iphone14pm from "../../assets/product__advice/14promax.jpeg"
@@ -83,7 +83,15 @@ function Products() {
   //     price: 4_087_000
   //   }
   // ]
-
+  const likes = useSelector(s=>s.heart)
+  console.log(likes)
+  const addHeart = (item)=>{
+    let index = likes.findIndex(i=> i.id === item.id)
+    if(index > -1){
+      return
+    }
+    dispatch({type:ADD_TO_LIKE, payload: item})
+  }
 
   return (
     <div className='product container'>
@@ -104,7 +112,11 @@ function Products() {
               <br />
             </div>
             <div className="product__reaction">
-              <AiOutlineHeart onClick={()=> dispatch({type:ADD_TO_LIKE, payload: item})} className='reaction_icon'/>
+              <div onClick={()=> addHeart(item)} className='reaction_icon'>
+                {
+                  likes?.some(i => i.id === item.id) ? <AiFillHeart/> : <AiOutlineHeart/> 
+                }
+              </div>
               <FiBarChart2 className='reaction_icon'/>
             </div>
           </div>)

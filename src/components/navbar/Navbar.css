@@ -83,7 +83,20 @@
     text-align: center;
     cursor: pointer;
     transition: .3s;
+    position: relative;
 }
+.nav__circle{
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    font-size: 12px;
+    background: var(--bg);
+    color: #fff;
+    padding: 1px 4px;
+    border-radius: 10px;
+}
+
+
 .nav__item:hover{
     color: var(--bg);
 }

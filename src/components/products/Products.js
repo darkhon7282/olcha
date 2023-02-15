@@ -5,13 +5,16 @@ import "./Products.css"
 import {FiShoppingCart, FiBarChart2} from "react-icons/fi"
 import {AiOutlineHeart, AiFillHeart} from "react-icons/ai"
 import { useDispatch, useSelector } from 'react-redux'
-import { ADD_TO_LIKE, REMOVE_LIKE } from '../../context/action/actionType'
+import { ADD_TO_LIKE, REMOVE_LIKE, ADD_TO_CART } from '../../context/action/actionType'
+import { type } from '@testing-library/user-event/dist/type'
 
 
 
 function Products() {
   const dispatch = useDispatch()
   const likes = useSelector(s=>s.heart)
+  const cart = useSelector(s=> s.cart)
+  console.log(cart)
 
   
   const addHeart = (item)=>{
@@ -23,11 +26,18 @@ function Products() {
   }
 
   
-  const cart = useSelector(s=> s.cart)
-  console.log(cart)
+
   const addToCart = (item) => {
-    console.log(item)
+    let index = cart.findIndex(i=> i.id === item.id)
+    if ( index < 0 ) {
+      return dispatch({type: ADD_TO_CART, payload: [...cart, {...item, qty: 1}]})
+    }
+    let newCart = cart.map((pro, inx)=> inx === index ? {...pro, qty: pro.qty + 1} : pro)
+    dispatch( {type: ADD_TO_CART, payload:newCart } )
   }
+
+
+
 
   return (
     <div className='product container'>
@@ -41,9 +51,9 @@ function Products() {
               
               <p className='product__name'>{item.title}</p>
               <del className='product__delete'>{item?.del} so'm</del>
-              <p className='product__price'>{item.price} so'm</p>
+              <p className='product__price'>{item.price.brm()} so'm</p>
               
-              <p className='product__credit'>{Math.floor((item.price + (item.price * 0.3)) / 12)} So'm x 12 oy</p>
+              <p className='product__credit'>{Math.floor((item.price + (item.price * 0.3)) / 12).brm()} So'm x 12 oy</p>
               <button onClick={()=> addToCart(item)}><FiShoppingCart/> Buy now</button>
               <br />
             </div>

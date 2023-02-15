@@ -12,9 +12,18 @@ import humo from "../../assets/humo.png"
 import payme from "../../assets/payme.png"
 import paynet from "../../assets/paynet.png"
 import uzcard from "../../assets/uzcard.png"
+import { useLocation } from 'react-router-dom'
+
+
 
 
 function Footer() {
+
+  const {pathname} = useLocation()
+  if (pathname.includes("admin")) {
+    return <></>
+  }
+
   return (
     <div className='footer'>
       <div className="container">

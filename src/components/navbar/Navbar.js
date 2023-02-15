@@ -6,6 +6,8 @@ import {SlBasket} from "react-icons/sl"
 import {BsPerson} from "react-icons/bs"
 import {FiX} from "react-icons/fi"
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 
 
 
@@ -32,6 +34,12 @@ function Navbar() {
   const [ show, setShow ] = useState(false)
 
   document.body.style.overflow = show ? "hidden" : "auto"
+  const cart = useSelector(s => s.cart)
+
+  const {pathname} = useLocation()
+  if (pathname.includes("admin")) {
+    return <></>
+  }
   
   return (
     <>
@@ -77,6 +85,7 @@ function Navbar() {
             <Link to={"/cart"} className="nav__item">
               <SlBasket/>
               <p>Savatcha</p>
+              <span className='nav__circle'>{cart.length}</span>
             </Link>
             <div onClick={()=> setShow(true)} className="nav__item">
               <BsPerson/>

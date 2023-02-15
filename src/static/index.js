@@ -7,11 +7,9 @@ export const PRODUCTS = [
         id: "pro-1",
         title: "Apple iPhone 14 Pro Max",
         del: 0,
-        price: 17_689_000,
+        price: 17_980_000,
         singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
+        
         xotira: "Doimiylik xotira xajmi",
         xotiraxajmi : [
             "128 GB",
@@ -67,11 +65,9 @@ export const PRODUCTS = [
         id: "pro-2",
         del: 0,
         title: "Noutbuk Lenovo IdeaPad 3 15IIL05 i3-1005G1 8/256GB 15.6",
-        price: 17_689_000,
+        price: 4_617_000,
         singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
+        
         singcard : [
             "4 559 000 so'm",
             "",
@@ -121,9 +117,7 @@ export const PRODUCTS = [
         title: "Smartfon Xiaomi Redmi Note 11 Pro 128GB 8 GB Grey",
         price : 3_391_000,
         singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
+        
         singcard : [
             "3 391 000 so'm",
             "",
@@ -178,9 +172,7 @@ export const PRODUCTS = [
         title: "Samsung Galaxy A13 Qora 4/128 GB",
         price: 2_259_000,
         singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
+        
         singcard : [
             "2 259 000 so'm",
             "",
@@ -234,9 +226,7 @@ export const PRODUCTS = [
         title: "Samsung Galaxy A33 5G 6/128GB Qora",
         price: 3_500_000,
         singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
+        
         singcard : [
             "3 500 000 so'm",
             "",
@@ -295,9 +285,7 @@ export const PRODUCTS = [
         title: "Monitor Pixel PXG24FHD 24 Curved Gaming",
         price: 2_575_000,
         singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
+        
         singcard : [
             "2 575 000 so'm",
             "",
@@ -341,9 +329,7 @@ export const PRODUCTS = [
         price : 4_137_000,
         title: "Noutbuk Lenovo V15 i3-10110U 4/1TB HDD 15.6",
         singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
+        
         singcard : [
             "4 137 000 so'm",
             "",
@@ -394,9 +380,7 @@ export const PRODUCTS = [
         title: "Smartfon Xiaomi Redmi Note 11 6 GB 128GB Grafit kulrang",
         price : 3_391_000,
         singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
+        
         singcard : [
             "2 550 000 so'm",
             "",
@@ -452,9 +436,7 @@ export const PRODUCTS = [
         title: "Nokia 110 Dual Sim, Black, WhiteGray",
         price: 420_000,
         singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
+        
         xotira: "Doimiylik xotira xajmi",
         xotiraxajmi : [
             "12 GB",
@@ -512,9 +494,7 @@ export const PRODUCTS = [
         title: "Samsung Galaxy A13 Qora 4/128 GB",
         price: 2_259_000,
         singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
-        singicon : <AiFillStar/>,
+        
         singcard : [
             "2 259 000 so'm",
             "",

@@ -1,6 +1,14 @@
 import React from 'react'
 import "./Subheader.css"
+import { useLocation } from 'react-router-dom'
+
 function Subheader() {
+
+  const {pathname} = useLocation()
+  if (pathname.includes("admin")) {
+    return <></>
+  }
+
   return (
     <div className='sub__header'>
         <div className="container">

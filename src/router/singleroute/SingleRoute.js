@@ -26,9 +26,7 @@ function SingleRoute() {
                     <img src={oneItem?.urls[0]} alt="" />
                 </div>
                 <div className="product__info">
-                    {
-                        oneItem?.desc?.map((info, ind)=><p key={ind}>{info}</p>)
-                    }
+                    <p>{oneItem?.desc}</p>
                     <h5>Barcha xususiyatlarini ko'rish</h5>
                     <span><BiCheckShield className='guaranty'/> *** oy kafolat</span>
                     <h5 className='product__brends'>*** brendining barcha tovarlari</h5>

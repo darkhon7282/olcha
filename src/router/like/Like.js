@@ -46,7 +46,6 @@ function Like() {
                       </div>
                     </div>
                     <div className="like__cost">
-                      <del>{item?.del} so'm</del>
                       <h4>{item?.price.brm()} so'm</h4>
                     </div>
                     <div className="like__download">

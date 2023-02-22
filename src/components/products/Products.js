@@ -1,20 +1,38 @@
-import React from 'react'
-import {PRODUCTS} from "../../static"
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Products.css"
 import {FiShoppingCart, FiBarChart2} from "react-icons/fi"
 import {AiOutlineHeart, AiFillHeart} from "react-icons/ai"
 import { useDispatch, useSelector } from 'react-redux'
 import { ADD_TO_LIKE, REMOVE_LIKE, ADD_TO_CART } from '../../context/action/actionType'
-import { type } from '@testing-library/user-event/dist/type'
+import { db } from "../../server"
+import { collection, getDocs, doc, deleteDoc } from "firebase/firestore"
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
 
 
-function Products() {
+
+function Products(admin) {
   const dispatch = useDispatch()
   const likes = useSelector(s=>s.heart)
   const cart = useSelector(s=> s.cart)
-  console.log(cart)
+  const[refresh, setRefresh] = useState(false)
+
+  
+  const [data, setData] = useState([])
+
+  const productsColRef = collection(db, "products")
+
+
+  useEffect(()=>{
+    const getProducts = async () => {
+      const products = await getDocs(productsColRef)
+      setData(products.docs.map((pro)=> ({ ...pro.data(), id: pro.id })))
+    }
+    getProducts()
+  }, [refresh])
+
+  console.log(data);
 
   
   const addHeart = (item)=>{
@@ -36,25 +54,52 @@ function Products() {
     dispatch( {type: ADD_TO_CART, payload:newCart } )
   }
 
+  const deleteProduct = async (id)=>{
+    await deleteDoc(doc(db, "products", id))
+      .then(res=> {
+        console.log(res)
+        setRefresh(!refresh)
+      })
+      .catch(res=> console.log(res))
+  }
 
 
+  
+  if(!data){
+    return <div className="productholder">
+      <SkeletonTheme baseColor="#202020" highlightColor="#444">
+        <p>
+            <Skeleton count={3} />
+        </p>
+    </SkeletonTheme>
+    </div>
+  }
+
+
+  
 
   return (
-    <div className='product container'>
+    <div className={`product ${admin ? "" : "container"}`}>
       <div className="product__about">
         
         {
-          PRODUCTS?.map((item, inx)=>
+          data?.map((item, inx)=>
           <div  key={inx} className="pro__items">
             <div className='product__data' to={"/"}>
               <Link to={`/information/${item.id}`}><img src={item.urls[0]} alt="" /></Link>
               
-              <p className='product__name'>{item.title}</p>
-              <del className='product__delete'>{item?.del} so'm</del>
+              <p className='product__name'>{item.title.length > 30 ? item.title.slice(0, 30)+"..." : item.title}</p>
               <p className='product__price'>{item.price.brm()} so'm</p>
               
-              <p className='product__credit'>{Math.floor((item.price + (item.price * 0.3)) / 12).brm()} So'm x 12 oy</p>
-              <button onClick={()=> addToCart(item)}><FiShoppingCart/> Buy now</button>
+              <p className='product__credit'>{Math.floor((item.price + (item.price * 0.3)) / 12)} So'm x 12 oy</p>
+              {
+                admin ?
+                <button onClick={()=> deleteProduct(item.id)}>Delete</button>
+                :
+                <button onClick={()=> addToCart(item)}><FiShoppingCart/> Buy now</button>
+                
+                
+              }
               <br />
             </div>
             <div className="product__reaction">

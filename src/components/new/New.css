@@ -19,6 +19,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 50px;
 }
 .new__category{
     width: 140px;
@@ -33,8 +34,10 @@
     transition: .3s;
 }
 .new__category img{
+    width: 200px;
+    height: 200px;
     border-radius: 20px;
-    border: 1px solid blue;
+    
     background: linear-gradient(45deg, #092264, #2696C8);
 }
 .new__category img:hover{
@@ -48,4 +51,15 @@
     line-height: 1.25;
     margin-top: 0;
     width: 100%;
+}
+
+.new__new{
+    width: 100px;
+    height: 30px;
+    border: 2px solid red;
+    border-radius: 5px;
+    
+}
+.new__new:hover{
+    background-color: rgb(255, 243, 243);
 }

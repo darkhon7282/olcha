@@ -1,9 +1,8 @@
-import {AiFillStar} from "react-icons/ai"
-import anorbank from "../assets/Anorbank.png"
+
 export const PRODUCTS = [
     
     {
-        bank: anorbank,
+        
         id: "pro-1",
         title: "Apple iPhone 14 Pro Max",
         del: 0,

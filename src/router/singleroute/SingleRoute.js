@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { PRODUCTS } from '../../static';
 import "./SingleRoute.css"
@@ -7,13 +7,41 @@ import {HiOutlineExclamationCircle} from "react-icons/hi"
 import {TbTruckDelivery} from "react-icons/tb"
 import {SlBasket} from "react-icons/sl"
 
+
+import { collection, getDocs } from "firebase/firestore"
+import { db } from '../../server';
+
 function SingleRoute() {
     const params = useParams()
-    const oneItem = PRODUCTS?.find(el => el.id === params.id)
-    console.log(oneItem);
+
+    const [data, setData] = useState([])
+
+    const productsColRef = collection(db, "products")
+
+
+    useEffect(()=>{
+        const getProducts = async () => {
+            const products = await getDocs(productsColRef)
+            setData(products.docs.map((pro)=> ({ ...pro.data(), id: pro.id })))
+        }
+    getProducts()
+  }, [])
+
+
+
+    const oneItem = data?.find(el => el.id === params.id)
+    
     
     if(!oneItem){
-        return <div> <h2>Ma'lumot topilmadi</h2> </div>        
+        return <div className='placeholder container'>
+            <div className="placeholder__image"></div>
+            <div className="placeholder__text">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>        
     }
     
   return (
@@ -27,6 +55,12 @@ function SingleRoute() {
                 </div>
                 <div className="product__info">
                     <p>{oneItem?.desc}</p>
+                    <p>Autopilot _______________ bor</p>
+                    <p>Autopilot _______________ bor</p>
+                    <p>Autopilot _______________ bor</p>
+                    <p>Autopilot _______________ bor</p>
+                    <p>Autopilot _______________ bor</p>
+                    
                     <h5>Barcha xususiyatlarini ko'rish</h5>
                     <span><BiCheckShield className='guaranty'/> *** oy kafolat</span>
                     <h5 className='product__brends'>*** brendining barcha tovarlari</h5>
@@ -34,7 +68,7 @@ function SingleRoute() {
             </div>
             <div className="product__sell">
                 <div className="product__add">
-                    <h2>{oneItem?.price} so'm</h2>
+                    <h2>{oneItem?.price.brm()} so'm</h2>
                     <p className='delivery_info'>Yetkazib berish to'g'risida ma'lumot: <HiOutlineExclamationCircle className='Exclamation'/></p>
                     <h3><TbTruckDelivery className='TruckDelivery'/> Standart yetkazib berish</h3>
                     <p className='delivery_time'>Manzilga qarab *** soatdan *** ish kunigacha yetkazib beriladi</p>

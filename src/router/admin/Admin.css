@@ -4,13 +4,70 @@
 }
 .admin__sidebar{
     width: 300px;
+    min-width: 300px;
     height: 100%;
-    background: var(--bg);
+    /* background: var(--bg); */
+    background: url("../../assets/admin/red.jpg");
     padding: 30px;
 }
+.admin__sidebar a{
+    color: #fff;
+}
+.admin__sidebar input{
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    padding: 0 20px;
+}
+.admin__sidebar hr{
+    margin: 20px 0;
+}
+
+
+.administrator{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    color: #fff;
+    
+}
+.administrator img{
+    width: 25%;
+    height: 100%;
+    border-radius: 10px;
+}
+.administrator__about{
+    width: 75%;
+    height: 100%;
+    padding: 0 10px;
+    line-height: 1.5;
+}
+.administrator__about h4{
+    font-weight: 400;
+}
+.administrator__about h5{
+    font-weight: 100;
+}
+.administrator__about span{
+    font-weight: 100;
+    font-size: 12px;
+}
+.internet{
+    color: greenyellow;
+}
+
 li{
     list-style: none;
 }
 .admin__content{
     padding: 30px;
+    overflow: auto;
+}
+.sidebar__menu{
+    margin: 20px 0;
+}
+.sidebar__menu li a{
+    color: #fff;
+    line-height: 2;
 }

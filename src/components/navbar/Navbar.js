@@ -6,32 +6,31 @@ import {SlBasket} from "react-icons/sl"
 import {BsPerson} from "react-icons/bs"
 import {FiX} from "react-icons/fi"
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { useLocation } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { useLocation, useNavigate } from 'react-router-dom'
+
+import { LOG_IN } from '../../context/action/actionType'
 
 
 
-const NAVBAR_DATA = [
-  {
-    text: "Taqqoslash",
-    icon: <BiBarChart/>
-  },
-  {
-    text: "Sevimlilar",
-    icon: <AiOutlineHeart/>
-  },
-  {
-    text: "Savatcha",
-    icon: <SlBasket/>
-  },
-  {
-    text: "Kirish",
-    icon: <BsPerson/>
-  }
-]
+
 
 function Navbar() {
   const [ show, setShow ] = useState(false)
+  const [ username, setUsername ] = useState("")
+  const [ password, setPassword ] = useState("")
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+
+  const register = ()=>{
+    if ( username === "gabriel" && password === "12345"  ) {
+      dispatch({type: LOG_IN, payload: {username, password}})
+      navigate("/admin")
+    }else{
+      console.log("error");
+    }
+  }
 
   document.body.style.overflow = show ? "hidden" : "auto"
   const cart = useSelector(s => s.cart)
@@ -57,22 +56,7 @@ function Navbar() {
             <input type="text" placeholder='Qidirish...'/>
             <button><AiOutlineSearch className='nav__icon'/></button>
           </div>
-          {/* <button className='btn nav_btn next_to_search'>
-            <BiBarChart className='nav__icon'/>
-            <h4>Taqqoslash</h4>
-          </button>
-          <button className='btn nav_btn next_to_search'>
-            <AiOutlineHeart className='nav__icon'/>
-            <h4>Sevimlilar</h4>
-          </button>
-          <button className='btn nav_btn next_to_search'>
-            <SlBasket className='nav__icon'/>
-            <h4>Savatcha</h4>
-          </button>
-          <button className='btn nav_btn next_to_search'>
-            <BsPerson className='nav__icon'/>
-            <h4>Kirish</h4>
-          </button> */}
+          
           <div className="nav__items">
             <Link to={"/"} className="nav__item">
               <BiBarChart/>
@@ -107,7 +91,12 @@ function Navbar() {
           <FiX onClick={()=> setShow(false)} className='nav__close'/>
           <h1>Tizimga kirish yoki profil yaratish</h1>
           <p>Telefon raqami</p>
-          <input className='nav_input' type="tel" name="" id="" />
+          <br />
+          <input value={username} onChange={e => setUsername(e.target.value)} className='nav_input' type="text" placeholder='username' />
+          <br />
+          <input value={password} onChange={e => setPassword(e.target.value)} type="password" placeholder='password' />
+          <br />
+          <button onClick={register}>login</button>
         </div>
       </>:<></>
     }

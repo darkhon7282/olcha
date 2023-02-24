@@ -1,3 +1,6 @@
+*{
+    font-family: "Raleway", sans-serif;
+}
 .like__cost button{
     border: 2px solid #000;
     padding: 3px 7.5px;
@@ -31,4 +34,184 @@
     .like__cost span{
         margin: 0 1px;
     }
+}
+
+.like_price{
+    padding: 30px;
+}
+.your__information{
+    width: 100%;
+    
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 30px;
+}
+.info__text{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.info__text button{
+    width: 120px;
+    height: 45px;
+    border-radius: 10px;
+    border: 2px solid #DA002B;
+    background-color: #fff;
+    color: #DA002B;
+    transition: .3s;
+}
+.info__text button:hover{
+    background-color: #DA002B;
+    color: #fff;
+}
+
+.your_info{
+    padding: 30px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.your_info input{
+    width: 48%;
+    border-radius: 13px;
+    height: 45px;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid black;
+}
+.your__address{
+    border: 1px solid gray;
+    padding: 30px;
+    border-radius: 16px;
+    margin: 30px 0;
+}
+.your__address button{
+    padding: 10px 15px;
+    height: 45px;
+    font-size: 16px;
+    background: #000;
+    color: #fff;
+    border-radius: 13px;
+    margin: 20px 0;
+}
+.your__address button:hover{
+    cursor: pointer;
+}
+.your__address input{
+    width: 100%;
+    height: 100px;
+    border-radius: 13px;
+    border: 2px solid rgb(203, 203, 203);
+    color: #DA002B;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: .3s;
+}
+.your__address input:hover{
+    border: 2px solid #DA002B;
+}
+.your__address h3{
+    font-size: 20px;
+    font-weight: 100;
+    padding: 20px 0;
+}
+
+
+
+.your_order_type{
+    padding: 30px;
+    border: 1px solid rgb(203, 203, 203);
+    margin-bottom: 20px;
+    border-radius: 16px;
+}
+.your_order_type button{
+    display: block;
+    width: 100%;
+    height: 65px;
+    margin: 20px 0;
+    border-radius: 10px;
+    
+    background-color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    transition: .3s;
+}
+.your_order_type button:hover{
+    border: 2px solid #DA002B;
+}
+.tick_order{
+    margin-right: 10px;
+}
+.your_payment_full{
+    border: 2px solid #DA002B;
+}
+.your_payment_credit{
+    border: 2px solid rgb(203, 203, 203);
+}
+.tick_1{
+    color: #DA002B;
+    border: 3px solid #DA002B;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+.your__textarea{
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid rgb(203, 203, 203);
+    padding: 30px;
+}
+.your__textarea h2{
+    font-weight: 500;
+    margin:0 0 20px 0;
+}
+.your__textarea textarea{
+    resize: none;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid rgb(203, 203, 203);
+    border-radius: 13px;
+}
+.your__textarea textarea:hover{
+    border: 2px solid rgb(203, 203, 203);
+}
+
+
+.your__order{
+    padding: 30px;
+    margin-top: 20px;
+    border: 1px solid rgb(203, 203, 203);
+    border-radius: 16px;
+}
+.your__order button{
+    width: 300px;
+    height: 45px;
+    border: 2px solid #DA002B;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #DA002B;
+    transition: .3s;
+}
+.your__order button:hover{
+    background-color: #DA002B;
+    color: #fff;
+    
+}
+.your__order p{
+    margin: 20px 0;
+    color: rgb(168, 168, 168);
+}
+.your__order p a{
+    color: rgb(0, 128, 255);
 }

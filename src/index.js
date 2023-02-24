@@ -20,7 +20,7 @@ import { SkeletonTheme } from 'react-loading-skeleton';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ["cart", "heart"],
+  whitelist: ["cart", "heart", "auth"],
   blacklist: ["water"]
 }
  

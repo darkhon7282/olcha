@@ -94,9 +94,9 @@ function Products(admin) {
               <p className='product__credit'>{Math.floor((item.price + (item.price * 0.3)) / 12)} So'm x 12 oy</p>
               {
                 admin ?
-                <button onClick={()=> deleteProduct(item.id)}>Delete</button>
-                :
                 <button onClick={()=> addToCart(item)}><FiShoppingCart/> Buy now</button>
+                :
+                <button onClick={()=> deleteProduct(item.id)}>Delete</button>
                 
                 
               }

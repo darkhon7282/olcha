@@ -88,7 +88,7 @@ function Products({admin}) {
                 admin ?
                 <button onClick={()=> deleteProduct(item.id)}>Delete</button>
                 :
-                <button onClick={()=> addToCart(item)}><FiShoppingCart/> Buy now</button>
+                <button onClick={()=> addToCart(item)}><FiShoppingCart/> Buy now</button> 
                 
                 
               }

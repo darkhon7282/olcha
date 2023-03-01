@@ -12,7 +12,7 @@ import { collection, getDocs, doc, deleteDoc } from "firebase/firestore"
 
 
 
-function Products(admin) {
+function Products({admin}) {
   const dispatch = useDispatch()
   const likes = useSelector(s=>s.heart)
   const cart = useSelector(s=> s.cart)

@@ -169,6 +169,17 @@
 
 
 
+.error{
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #da002b;
+    opacity: 0;
+    user-select: none;
+}
+
+
+
 
 
 

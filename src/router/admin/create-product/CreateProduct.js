@@ -58,7 +58,9 @@ function CreateProduct() {
             <option value="phone">phone</option>
             <option value="tv">tv</option>
             <option value="laptop">laptop</option>
-            <option value="Electric car">Electric car</option>
+            <option value="ElectricCar">electric car</option>
+            <option value="airConditioner">air conditioner</option>
+            <option value="kitchen">for the kitchen</option>
           </select>
           <button disabled={loading} type="submit">{loading ? "Loading..." : "Create Product"}</button>
         </form>

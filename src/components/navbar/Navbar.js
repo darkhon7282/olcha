@@ -19,9 +19,13 @@ function Navbar() {
   const [ show, setShow ] = useState(false)
   const [ username, setUsername ] = useState("")
   const [ password, setPassword ] = useState("")
+  const [ error, setError ] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const auth = useSelector(s=> s.auth)
 
+  document.body.style.overflow = show ? "hidden" : "auto"
+  const cart = useSelector(s => s.cart)
 
   const register = ()=>{
     if ( username === "gabriel" && password === "12345"  ) {
@@ -29,16 +33,32 @@ function Navbar() {
       navigate("/admin")
     }else{
       console.log("error");
+      setError(true)
     }
   }
 
-  document.body.style.overflow = show ? "hidden" : "auto"
-  const cart = useSelector(s => s.cart)
+
+  const defaultCase = ()=>{
+    setShow(false)
+    setUsername("")
+    setPassword("")
+    setError(false)
+  }
+
+
+  const checkAdmin = ()=>{
+    if (auth) {
+      return navigate("/admin")
+    }
+    setShow(true)
+  }
 
   const {pathname} = useLocation()
   if (pathname.includes("admin")) {
     return <></>
   }
+
+
   
   return (
     <>
@@ -71,7 +91,7 @@ function Navbar() {
               <p>Savatcha</p>
               <span className='nav__circle'>{cart.length}</span>
             </Link>
-            <div onClick={()=> setShow(true)} className="nav__item">
+            <div onClick={checkAdmin} className="nav__item">
               <BsPerson/>
               <p>Kirish</p>
             </div>
@@ -86,10 +106,13 @@ function Navbar() {
 
     {
       show ? <>
-        <div onClick={()=> setShow(false)} className="nav__shadow"></div>
+        <div onClick={defaultCase} className="nav__shadow"></div>
         <div className="nav__login">
-          <FiX onClick={()=> setShow(false)} className='nav__close'/>
+          <FiX onClick={defaultCase} className='nav__close'/>
           <h1>Tizimga kirish yoki profil yaratish</h1>
+          <span
+            style={{opacity: error ? 1 : 0}}
+            className='error'>username yoki parol xato</span>
           <p>Telefon raqami</p>
           <br />
           <input value={username} onChange={e => setUsername(e.target.value)} className='nav_input' type="text" placeholder='username' />

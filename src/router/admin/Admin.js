@@ -4,6 +4,7 @@ import ManageProduct from './manage-product/ManageProduct'
 import CreateCategory from './create-category/CreateCategory'
 import { Route, Routes, NavLink } from 'react-router-dom'
 import "./Admin.css"
+import { useDispatch } from 'react-redux'
 import { AiTwotoneHome, AiOutlineLineChart } from "react-icons/ai"
 import { IoIosCreate } from "react-icons/io"
 import { RiProductHuntLine, RiRadioButtonLine } from "react-icons/ri"
@@ -11,8 +12,17 @@ import { TbComponents } from "react-icons/tb"
 import { FaAngleLeft } from "react-icons/fa"
 import administrator from "../../assets/admin/admin.jpg"
 import ManageCategory from './manage-category/ManageCategory'
+import { LOG_OUT } from '../../context/action/actionType'
 
-function admin() {
+function Admin() {
+  const dispatch = useDispatch()
+
+  
+
+
+
+
+
   return (
     <div className='admin'>
       <div className="admin__sidebar">
@@ -39,6 +49,8 @@ function admin() {
           <li><NavLink to={'manage-category'}><AiOutlineLineChart/> Manage Category</NavLink></li>
 
         </ul>
+
+        <button onClick={()=> dispatch({type: LOG_OUT})}>log out</button>
       </div>
       <div className="admin__content">
         <Routes>
@@ -53,4 +65,4 @@ function admin() {
   )
 }
 
-export default admin
+export default Admin

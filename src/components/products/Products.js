@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { ADD_TO_LIKE, REMOVE_LIKE, ADD_TO_CART } from '../../context/action/actionType'
 import { db } from "../../server"
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore"
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+
 
 
 
@@ -65,15 +65,7 @@ function Products(admin) {
 
 
   
-  if(!data){
-    return <div className="productholder">
-      <SkeletonTheme baseColor="#202020" highlightColor="#444">
-        <p>
-            <Skeleton count={3} />
-        </p>
-    </SkeletonTheme>
-    </div>
-  }
+  
 
 
   
@@ -94,9 +86,9 @@ function Products(admin) {
               <p className='product__credit'>{Math.floor((item.price + (item.price * 0.3)) / 12)} So'm x 12 oy</p>
               {
                 admin ?
-                <button onClick={()=> addToCart(item)}><FiShoppingCart/> Buy now</button>
-                :
                 <button onClick={()=> deleteProduct(item.id)}>Delete</button>
+                :
+                <button onClick={()=> addToCart(item)}><FiShoppingCart/> Buy now</button>
                 
                 
               }
